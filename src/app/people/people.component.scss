@@ -1,8 +1,12 @@
 .people {
 	
+	&-card-header {
+		width: 100%;
+	}
+
 	&-search {
 		font-size: 14px;
-		width: 300px;
+		width: 400px;
 	}
 
 	&-table {

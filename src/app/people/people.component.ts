@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { PeopleService } from '../services/people.service';
-// import { MatTableDataSource } from '@angular/material/table';
+import { User } from '../models/user';
 
 @Component({
 	selector: 'app-people',
@@ -8,8 +9,8 @@ import { PeopleService } from '../services/people.service';
 	styleUrls: ['./people.component.scss']
 })
 export class PeopleComponent implements OnInit {
-	dataSource;
-	filteredDataSource;
+	dataSource: User[];
+	filteredDataSource: User[];
 	peopleColumns: string[] = ['name', 'username', 'email'];
 
 	constructor(

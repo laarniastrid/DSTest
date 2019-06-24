@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { PersonModule } from './person/person.module';
+import { UserModule } from './user/user.module';
 import { PeopleModule } from './people/people.module';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { PeopleModule } from './people/people.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PersonModule,
+	UserModule,
     PeopleModule,
 	HttpClientModule,
 	BrowserAnimationsModule,

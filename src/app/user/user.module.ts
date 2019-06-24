@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PersonComponent } from './person.component';
+import { UserComponent } from './user.component';
 import { RouterModule } from '@angular/router';
 import { MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
-  declarations: [PersonComponent],
+  declarations: [UserComponent],
   imports: [
     CommonModule,
 	RouterModule,
@@ -13,4 +13,4 @@ import { MatIconModule, MatButtonModule } from '@angular/material';
 	MatButtonModule,
   ]
 })
-export class PersonModule { }
+export class UserModule { }
