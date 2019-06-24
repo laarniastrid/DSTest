@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonComponent } from './person.component';
 import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [PersonComponent],
@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material';
     CommonModule,
 	RouterModule,
 	MatIconModule,
+	MatButtonModule,
   ]
 })
 export class PersonModule { }

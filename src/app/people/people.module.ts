@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -19,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 		MatSortModule,
 		MatFormFieldModule,
 		MatInputModule,
+		MatCardModule,
 		FlexLayoutModule,
 	]
 })
