@@ -1,0 +1,34 @@
+<nav>
+	<a [routerLink]="['/person']">link to person</a>
+</nav>
+
+<section class="people">
+	<!-- Filter table -->
+	<mat-form-field class="people-search">
+		<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Names">
+	</mat-form-field>
+
+	<!-- Table of people here -->
+	<table class="people-table" mat-table [dataSource]="dataSource">
+		<tr mat-header-row *matHeaderRowDef="peopleColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: peopleColumns"></tr>
+
+		<!-- Name columm -->
+		<ng-container matColumnDef="name">
+			<th mat-header-cell *matHeaderCellDef>Name</th>
+			<td mat-cell *matCellDef="let element">{{ element.name }}</td>
+		</ng-container>
+
+		<!-- Username column -->
+		<ng-container matColumnDef="username">
+			<th mat-header-cell *matHeaderCellDef>Username</th>
+			<td mat-cell *matCellDef="let element">{{ element.username }}</td>
+		</ng-container>
+
+		<!-- Email column -->
+		<ng-container matColumnDef="email">
+			<th mat-header-cell *matHeaderCellDef>Email</th>
+			<td mat-cell *matCellDef="let element">{{ element.email }}</td>
+		</ng-container>
+	</table>
+</section>
