@@ -9,6 +9,7 @@ import { PeopleService } from '../services/people.service';
 })
 export class PeopleComponent implements OnInit {
 	dataSource;
+	filteredDataSource;
 	peopleColumns: string[] = ['name', 'username', 'email'];
 
 	constructor(
@@ -24,10 +25,16 @@ export class PeopleComponent implements OnInit {
 			.subscribe(response => {
 				console.log('response , ', response);
 				this.dataSource = response;
+				this.filteredDataSource = response;
 			})
 	}
 
 	applyFilter(filterValue: string) {
-		this.dataSource.filter = filterValue.trim().toLowerCase();
+		this.filteredDataSource = this.dataSource.filter(person => person.name.toLowerCase().indexOf(filterValue) >= 0);
 	}
+
+	test(person) {
+		console.log(person);
+	}
+
 }

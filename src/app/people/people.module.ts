@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [
@@ -18,6 +19,7 @@ import { MatInputModule } from '@angular/material';
 		MatSortModule,
 		MatFormFieldModule,
 		MatInputModule,
+		FlexLayoutModule,
 	]
 })
 export class PeopleModule { }
