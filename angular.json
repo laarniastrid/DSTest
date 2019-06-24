@@ -136,5 +136,10 @@
       }
     }
   },
-  "defaultProject": "DSTest"
+  "defaultProject": "DSTest",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
