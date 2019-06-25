@@ -1,6 +1,21 @@
-.person {
+.user {
 
 	&-back-icon {
 		vertical-align: middle;
+	}
+
+	&-details {
+		width: 100%;
+		margin-top: 10px;
+
+		.details-item {
+			margin: 15px;
+		}
+
+		.label {
+			min-width: 150px;
+			margin-right: 5px;
+			font-weight: 600;
+		}
 	}
 }

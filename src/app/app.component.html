@@ -1,7 +1,11 @@
-<mat-toolbar class="page-header">
+<mat-toolbar class="page-header" color="primary">
 	<mat-toolbar-row>
 		<span>{{ title }}</span>
 	</mat-toolbar-row>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<div class="page-wrapper">
+	<div class="content">
+		<router-outlet></router-outlet>
+	</div>
+</div>

@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserComponent } from './user.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
-import { MatIconModule, MatButtonModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatCardModule, MatDividerModule, MatFormFieldModule, MatTabsModule } from '@angular/material';
+
+import { UserComponent } from './user.component';
 
 @NgModule({
   declarations: [UserComponent],
@@ -11,6 +13,9 @@ import { MatIconModule, MatButtonModule } from '@angular/material';
 	RouterModule,
 	MatIconModule,
 	MatButtonModule,
+	MatCardModule,
+	MatDividerModule,
+	FlexLayoutModule,
   ]
 })
 export class UserModule { }
