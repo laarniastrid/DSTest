@@ -12,6 +12,7 @@ export class PeopleComponent implements OnInit {
 	dataSource: User[];
 	filteredDataSource: User[];
 	peopleColumns: string[] = ['name', 'username', 'email'];
+	hasError: boolean = false;
 
 	constructor(
 		private people: PeopleService,
@@ -26,6 +27,9 @@ export class PeopleComponent implements OnInit {
 			.subscribe(response => {
 				this.dataSource = response;
 				this.filteredDataSource = response;
+			},
+			error => {
+				this.hasError = true;
 			})
 	}
 

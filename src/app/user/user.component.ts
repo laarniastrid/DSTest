@@ -12,6 +12,7 @@ import { User } from '../models/user';
 export class UserComponent implements OnInit {
 	user: User;
 	id: Number;
+	hasError: boolean = false;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -30,6 +31,9 @@ export class UserComponent implements OnInit {
 		this.service.getOne()
 			.subscribe(response => {
 				this.user = response.filter(user => user.id === this.id)[0];
+			},
+			error => {
+				this.hasError = true;
 			})
 	}
 }
