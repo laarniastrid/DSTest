@@ -5,16 +5,16 @@
 	</a>
 </nav>
 
-<div class="user-details" fxLayout="row" fxLayoutGap="20px" fxFill >
+<div *ngIf="user" class="user-details" fxLayout="row" fxLayoutGap="20px" fxFill>
 	<!-- User Details -->
-	<mat-card fxFlex="50" >
-		<mat-card-header fxLayout="row" fxLayoutAlign=" end" >
-			<mat-card-title>{{ user.name }}</mat-card-title>
+	<mat-card fxFlex="50">
+		<mat-card-header fxLayout="row" fxLayoutAlign=" end">
+			<mat-card-title>{{ user.name }} ({{ user.username}})</mat-card-title>
 		</mat-card-header>
 		<mat-divider></mat-divider>
 		<mat-card-content>
 
-			<div class="details-item" fxLayout="row" >
+			<div class="details-item" fxLayout="row">
 				<label for="address" class="label">Address: </label>
 				<address id="address" class="">
 					{{ user.address.street }} <br>
@@ -25,7 +25,7 @@
 
 			<mat-divider [inset]="true"></mat-divider>
 
-			<div class="details-item" fxLayout="row" >
+			<div class="details-item" fxLayout="row">
 				<label for="phone" class="label">Phone: </label>
 				<div id="phone" class="">
 					<a href="tel:{{ user.phone }}">{{ user.phone }}</a>
@@ -34,7 +34,7 @@
 
 			<mat-divider [inset]="true"></mat-divider>
 
-			<div class="details-item" fxLayout="row" >
+			<div class="details-item" fxLayout="row">
 				<label for="email" class="label">Email: </label>
 				<div id="email" class="">
 					<a href="mailto:{{ user.email }}">{{ user.email }}</a>
@@ -43,7 +43,7 @@
 
 			<mat-divider [inset]="true"></mat-divider>
 
-			<div class="details-item" fxLayout="row" >
+			<div class="details-item" fxLayout="row">
 				<label for="website" class="label">Website: </label>
 				<div id="website" class="">
 					<a href="//{{ user.website }}" target="_blank">{{ user.website }}</a>
@@ -54,28 +54,28 @@
 	</mat-card>
 
 	<!-- Company Details -->
-	<mat-card fxFlex="50" >
-		<mat-card-header fxLayout="row" fxLayoutAlign=" end" >
+	<mat-card fxFlex="50">
+		<mat-card-header fxLayout="row" fxLayoutAlign=" end">
 			<mat-card-title>Company Details</mat-card-title>
 		</mat-card-header>
 		<mat-divider></mat-divider>
 		<mat-card-content>
 
-			<div class="details-item" fxLayout="row" >
+			<div class="details-item" fxLayout="row">
 				<label for="companyName" class="label">Company Name: </label>
 				<div id="companyName" class="">{{ user.company.name }}</div>
 			</div>
 
 			<mat-divider [inset]="true"></mat-divider>
 
-			<div class="details-item" fxLayout="row" >
+			<div class="details-item" fxLayout="row">
 				<label for="businessStrategy" class="label">Business Strategy: </label>
 				<div id="businessStrategy" class="">{{ user.company.bs }}</div>
 			</div>
 
 			<mat-divider [inset]="true"></mat-divider>
 
-			<div class="details-item" fxLayout="row" > 
+			<div class="details-item" fxLayout="row">
 				<label for="catchPhrase" class="label">Catch Phrase: </label>
 				<div id="catchPhrase" class="">{{ user.company.catchPhrase }}</div>
 			</div>
