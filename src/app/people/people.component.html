@@ -1,16 +1,19 @@
 <!-- Table of people here -->
 <mat-card class="people">
-	<mat-card-header class="people-card-header" fxLayout="row" fxLayoutAlign="space-between end">
+	<mat-card-header class="people-card-header" fxLayout="row" fxLayoutAlign="start end">
 		<mat-card-title>Directory</mat-card-title>
-		<!-- Filter table -->
-		<form class="people-form" >
-			<mat-form-field class="people-search">
-				<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by Name" >
-			</mat-form-field>
-		</form>
 	</mat-card-header>
 	<mat-divider></mat-divider>
 	<mat-card-content>
+		<!-- Filter table -->
+		<!-- <div> -->
+			<form class="people-form" fxLayout="row" fxLayoutAlign="end" >
+				<mat-form-field class="people-search">
+					<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by Name">
+				</mat-form-field>
+			</form>
+		<!-- </div> -->
+
 		<table class="people-table" mat-table [dataSource]="filteredDataSource" color="primary" >
 			<tr mat-header-row *matHeaderRowDef="peopleColumns"></tr>
 			<tr 
