@@ -50,11 +50,8 @@
 					<mat-expansion-panel-header 
 						class="people-accordion expansion-header" >
 						<mat-panel-title>
-							Name:
-						</mat-panel-title>
-						<mat-panel-description>
 							{{ element.name }}
-						</mat-panel-description>
+						</mat-panel-title>
 					</mat-expansion-panel-header>
 					
 					<a class="people-details" [routerLink]="['/person', element.id]" >
