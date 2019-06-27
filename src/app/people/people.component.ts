@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
 import { PeopleService } from '../services/people.service';
 import { User } from '../models/user';
@@ -9,16 +9,25 @@ import { User } from '../models/user';
 	styleUrls: ['./people.component.scss']
 })
 export class PeopleComponent implements OnInit {
+	public innerWidth: any;
+
 	dataSource: User[];
 	filteredDataSource: User[];
 	peopleColumns: string[] = ['name', 'username', 'email'];
 	hasError: boolean = false;
 
+	@HostListener('window:resize', ['$event'])
+	onresize(event) {
+		this.innerWidth = window.innerWidth;
+	}
+	
 	constructor(
 		private people: PeopleService,
 	) { }
 
 	ngOnInit() {
+		this.innerWidth = window.innerWidth;
+
 		this.getList()
 	}
 
@@ -35,6 +44,12 @@ export class PeopleComponent implements OnInit {
 
 	applyFilter(filterValue: string) {
 		this.filteredDataSource = this.dataSource.filter(person => person.name.toLowerCase().indexOf(filterValue) >= 0);
+	}
+
+	isSmallScreen(): boolean {
+		let smSize = 720;
+
+		return this.innerWidth <= smSize;
 	}
 
 }
