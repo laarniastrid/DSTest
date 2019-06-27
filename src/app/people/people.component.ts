@@ -43,7 +43,9 @@ export class PeopleComponent implements OnInit {
 	}
 
 	applyFilter(filterValue: string) {
-		this.filteredDataSource = this.dataSource.filter(person => person.name.toLowerCase().indexOf(filterValue) >= 0);
+		let value = filterValue.toLowerCase();
+
+		this.filteredDataSource = this.dataSource.filter(person => person.name.toLowerCase().indexOf(value) >= 0);
 	}
 
 	isSmallScreen(): boolean {
