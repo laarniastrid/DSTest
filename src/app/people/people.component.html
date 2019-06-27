@@ -55,14 +55,14 @@
 					</mat-expansion-panel-header>
 					
 					<a class="people-details" [routerLink]="['/person', element.id]" >
-						<div class="details-item" fxLayout="row">
+						<div class="details-item" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" >
 							<label for="username" class="label">Username: </label>
 							<div>
 								{{ element.username }}
 							</div>
 						</div>
 
-						<div class="details-item" fxLayout="row">
+						<div class="details-item" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" >
 							<label for="email" class="label">Email: </label>
 							<div>
 								{{ element.email }}
