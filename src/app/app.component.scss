@@ -1,19 +1,25 @@
+@mixin contentWidth() {
+    .content {
+        max-width: 1200px;
+        margin: 0 auto 10px;
+    }
+}
+
 .page {
+    &-header {
+        position: relative;
+        width: calc(100% + 20px);
+        top: -10px;
+        left: -10px;
+        margin-bottom: 20px;
 
-	&-header {
-		position: relative;
-		width: calc(100% + 20px);
-		top: -10px;
-		left: -10px;
-		margin-bottom: 20px;
-	}
+		@include contentWidth();
+    }
 
-	&-wrapper {
-		width: 100%;
-		
-		.content {
-			max-width: 1200px;
-			margin: auto;
-		}
-	}
+    &-wrapper,
+    &-styles {
+        width: 100%;
+
+		@include contentWidth();
+    }
 }

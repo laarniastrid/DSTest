@@ -1,7 +1,12 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	HostListener,
+} from '@angular/core';
 
 import { PeopleService } from '../services/people.service';
 import { User } from '../models/user';
+import { StylesService } from '../services/styles.service';
 
 @Component({
 	selector: 'app-people',
@@ -20,9 +25,10 @@ export class PeopleComponent implements OnInit {
 	onresize(event) {
 		this.innerWidth = window.innerWidth;
 	}
-	
+
 	constructor(
 		private people: PeopleService,
+		private styles: StylesService,
 	) { }
 
 	ngOnInit() {
@@ -42,6 +48,10 @@ export class PeopleComponent implements OnInit {
 			})
 	}
 
+	get selectedStyle() {
+		return this.styles.selectedStyle;
+	}
+
 	applyFilter(filterValue: string) {
 		let value = filterValue.toLowerCase();
 
@@ -52,6 +62,14 @@ export class PeopleComponent implements OnInit {
 		let smSize = 720;
 
 		return this.innerWidth <= smSize;
+	}
+
+	isMaterial() {
+		return this.selectedStyle === 'material';
+	}
+
+	isSass() {
+		return this.selectedStyle === 'sass';
 	}
 
 }
