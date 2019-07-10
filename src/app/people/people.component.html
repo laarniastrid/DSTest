@@ -1,76 +1,89 @@
 <!-- Table of people here -->
-<mat-card class="people">
-	<mat-card-header class="people-card-header" fxLayout="row" fxLayoutAlign="start end">
-		<mat-card-title>Directory</mat-card-title>
-	</mat-card-header>
-	<mat-divider></mat-divider>
-	<mat-card-content>
-		<!-- Filter table -->
-		<form class="people-form" fxLayout="row" fxLayoutAlign="end" >
-			<mat-form-field class="people-search">
-				<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by Name">
-			</mat-form-field>
-		</form>
+<ng-container *ngIf="isMaterial()" >
+	<mat-card class="people">
+		<mat-card-header class="people-card-header" fxLayout="row" fxLayoutAlign="start end">
+			<mat-card-title>Directory</mat-card-title>
+		</mat-card-header>
+		<mat-divider></mat-divider>
+		<mat-card-content>
+			<!-- Filter table -->
+			<form class="people-form" fxLayout="row" fxLayoutAlign="end" >
+				<mat-form-field class="people-search">
+					<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by Name">
+				</mat-form-field>
+			</form>
 
-		<ng-container *ngIf="!isSmallScreen()">
-			<table class="people-table" mat-table [dataSource]="filteredDataSource" color="primary" >
-				<tr mat-header-row *matHeaderRowDef="peopleColumns"></tr>
-				<tr 
-					mat-row *matRowDef="let element; columns: peopleColumns" 
-					[routerLink]="['/person', element.id]" 
-					class="row" >
-				</tr>
+			<ng-container *ngIf="!isSmallScreen()">
+				<table class="people-table" mat-table [dataSource]="filteredDataSource" color="primary" >
+					<tr mat-header-row *matHeaderRowDef="peopleColumns"></tr>
+					<tr 
+						mat-row *matRowDef="let element; columns: peopleColumns" 
+						[routerLink]="['/person', element.id]" 
+						class="row" >
+					</tr>
 
-				<!-- Name columm -->
-				<ng-container matColumnDef="name">
-					<th mat-header-cell *matHeaderCellDef>Name</th>
-					<td mat-cell *matCellDef="let element">{{ element.name }}</td>
-				</ng-container>
+					<!-- Name columm -->
+					<ng-container matColumnDef="name">
+						<th mat-header-cell *matHeaderCellDef>Name</th>
+						<td mat-cell *matCellDef="let element">{{ element.name }}</td>
+					</ng-container>
 
-				<!-- Username column -->
-				<ng-container matColumnDef="username">
-					<th mat-header-cell *matHeaderCellDef>Username</th>
-					<td mat-cell *matCellDef="let element">{{ element.username }}</td>
-				</ng-container>
+					<!-- Username column -->
+					<ng-container matColumnDef="username">
+						<th mat-header-cell *matHeaderCellDef>Username</th>
+						<td mat-cell *matCellDef="let element">{{ element.username }}</td>
+					</ng-container>
 
-				<!-- Email column -->
-				<ng-container matColumnDef="email">
-					<th mat-header-cell *matHeaderCellDef>Email</th>
-					<td mat-cell *matCellDef="let element">{{ element.email }}</td>
-				</ng-container>
-			</table>
-		</ng-container>
+					<!-- Email column -->
+					<ng-container matColumnDef="email">
+						<th mat-header-cell *matHeaderCellDef>Email</th>
+						<td mat-cell *matCellDef="let element">{{ element.email }}</td>
+					</ng-container>
+				</table>
+			</ng-container>
 
-		<!-- "Smaller" screen size -->
-		<ng-container *ngIf="isSmallScreen()">
-			<mat-accordion>
-				<mat-expansion-panel 
-					class="people-panel-content" 
-					*ngFor="let element of filteredDataSource" >
-					<mat-expansion-panel-header 
-						class="people-accordion expansion-header" >
-						<mat-panel-title>
-							{{ element.name }}
-						</mat-panel-title>
-					</mat-expansion-panel-header>
-					
-					<a class="people-details" [routerLink]="['/person', element.id]" >
-						<div class="details-item" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" >
-							<label for="username" class="label">Username: </label>
-							<div>
-								{{ element.username }}
+			<!-- "Smaller" screen size -->
+			<ng-container *ngIf="isSmallScreen()">
+				<mat-accordion>
+					<mat-expansion-panel 
+						class="people-panel-content" 
+						*ngFor="let element of filteredDataSource" >
+						<mat-expansion-panel-header 
+							class="people-accordion expansion-header" >
+							<mat-panel-title>
+								{{ element.name }}
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						
+						<a class="people-details" [routerLink]="['/person', element.id]" >
+							<div class="details-item" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" >
+								<label for="username" class="label">Username: </label>
+								<div>
+									{{ element.username }}
+								</div>
 							</div>
-						</div>
 
-						<div class="details-item" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" >
-							<label for="email" class="label">Email: </label>
-							<div>
-								{{ element.email }}
+							<div class="details-item" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" >
+								<label for="email" class="label">Email: </label>
+								<div>
+									{{ element.email }}
+								</div>
 							</div>
-						</div>
-					</a>
-				</mat-expansion-panel>
-			</mat-accordion>
-		</ng-container>
-	</mat-card-content>
-</mat-card>
+						</a>
+					</mat-expansion-panel>
+				</mat-accordion>
+			</ng-container>
+		</mat-card-content>
+	</mat-card>
+</ng-container>
+
+<ng-container *ngIf="isSass()" >
+	<div class="card" >
+		<div class="card__header">
+			<h2>Directory</h2>
+		</div>
+		<div class="card__content">
+			things here
+		</div>
+	</div>
+</ng-container>
