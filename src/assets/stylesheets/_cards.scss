@@ -1,14 +1,50 @@
 .sass {
 	font-family: Roboto, "Helvetica Neue", sans-serif;
 
+	// cards
 	.card {
 		position: relative;
 		padding: 15px;
 		border-radius: 4px;
 		display: block;
-		box-shadow: 0 2px 3px 0 silver;
+		box-shadow: 0 1px 5px -1px rgba(0,0,0,0.25);
+		color: rgba(0,0,0,0.87);
 
-		// &__header {}
+		&>:first-child {
+			margin-top: 0;
+		}
+
+		&__title {
+			font-size: 20px;
+			margin-bottom: 12px;
+			display: block;
+			font-weight: 500;
+		}
+
+		&__header {
+			width: calc(100% + 30px);
+			position: relative;
+			left: -15px;
+			top: -15px;
+			padding: 0 30px;
+			min-height: 20px;
+			margin: -20px 0 -10px;
+
+			// display: flex;
+			// flex-direction: row;
+			// box-sizing: border-box;
+			// place-content: flex-end flex-start;
+		}
+
+		&__divider {
+			width: calc(100% + 30px);
+			height: 1px;
+			color: rgba(0,0,0,0.12);
+			background: rgba(0,0,0,0.12);
+			border: none;
+			position: relative;
+			left: -15px;
+		}
 
 		// &__content {}
 	}
